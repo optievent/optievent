@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>OptiEvent | Administration</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('Admin/assets/images/favicon.ico')}}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
   <body>
@@ -221,29 +221,34 @@
                   <div class="card-body">
                     <h4 class="card-title">Créer une activité</h4>
                     <p class="card-description">Remplissez ce formulaire pour créer une activité</p>
-                    <form class="forms-sample">
+                    <form class="dropzone dropzone-custom needsclick add-professors forms-sample" id="demo1-upload" enctype="multipart/form-data" method="post" action="{{route('activites.store')}}">
+                    {{ csrf_field() }}
+
                       <div class="form-group">
                         <label for="exampleInputName1">Libellé de l'activité : (<span class="red">*</span>)</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <input type="text" name="libelle" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
                         <label for="exampleSelectGender">Date  (<span class="red">*</span>)</label>
-                        <select class="form-control" id="exampleSelectGender">
+                        <!--<select class="form-control" id="exampleSelectGender">
                           <option>En ligne</option>
                           <option>Hors ligne</option>
-                        </select>
+                        </select> -->
+                        <div class="">
+                            <input type="date" name="date" class="form-control" placeholder="dd/mm/yyyy" />
+                            </div>
                       </div>
                       <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Heure de début : (<span class="red">*</span>)</label>
                             <div class="">
-                            <input class="form-control" placeholder="dd/mm/yyyy" />
+                            <input type="text" name="heure_debut" class="form-control" placeholder="dd/mm/yyyy" />
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Heure de fin : (<span class="red">*</span>)</label>
                             <div class="">
-                            <input class="form-control" placeholder="dd/mm/yyyy" />
+                            <input type="text" name="heure_fin" class="form-control" placeholder="dd/mm/yyyy" />
                             </div>
                         </div>
                     </div>
