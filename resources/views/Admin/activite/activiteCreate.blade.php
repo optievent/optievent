@@ -223,7 +223,7 @@
                     <p class="card-description">Remplissez ce formulaire pour créer une activité</p>
                     <form class="forms-sample">
                       <div class="form-group">
-                        <label for="exampleInputName1">Libellé de l'activité : (<span class="red">*</span>)</label>
+                        <label for="exampleInputName1">Libellé de l'activités : (<span class="red">*</span>)</label>
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
