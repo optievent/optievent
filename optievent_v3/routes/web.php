@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Admin\Dashboard.index');
 });
 
 Route::resource('/entreprises', 'App\Http\Controllers\EntrepriseController');

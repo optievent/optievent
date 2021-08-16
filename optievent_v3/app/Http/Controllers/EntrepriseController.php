@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Entreprise;
+use DB;
+
 
 class EntrepriseController extends Controller
 {
@@ -14,6 +17,9 @@ class EntrepriseController extends Controller
     public function index()
     {
         //
+        $entreprises = DB::table('entreprises')->get();
+
+        return view('Admin/entreprise.entrepriseLister', compact('entreprises'));
     }
 
     /**
@@ -24,6 +30,7 @@ class EntrepriseController extends Controller
     public function create()
     {
         //
+        return view('Admin/entreprise.entrepriseCreate');
     }
 
     /**

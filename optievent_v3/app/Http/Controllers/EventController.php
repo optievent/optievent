@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ZoomMeeting;
 use App\Traits\ZoomMeetingTrait;
+use App\Models\Event;
+use DB;
 
 
-class EvenController extends Controller
+class EventController extends Controller
 {
 
     use ZoomMeetingTrait;
@@ -25,6 +27,9 @@ class EvenController extends Controller
     public function index()
     {
         //
+        $events = DB::table('events')->get();
+
+        return view('Admin/event.eventLister', compact('events'));
     }
 
     /**

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Participant;
+use DB;
 
 class participantController extends Controller
 {
@@ -14,6 +16,9 @@ class participantController extends Controller
     public function index()
     {
         //
+        $participants = DB::table('participants')->get();
+
+        return view('Admin/participant.participantLister', compact('participants'));
     }
 
     /**

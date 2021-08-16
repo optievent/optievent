@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profil;
+use DB;
 
 class profilController extends Controller
 {
@@ -14,6 +16,9 @@ class profilController extends Controller
     public function index()
     {
         //
+        $profils = DB::table('profils')->get();
+
+        return view('Admin/profil.profilLister', compact('profils'));
     }
 
     /**

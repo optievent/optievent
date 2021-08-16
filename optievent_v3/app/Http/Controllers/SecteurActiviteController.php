@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ZoomMeeting;
+use App\Traits\ZoomMeetingTrait;
+use App\Models\Secteur_activite;
+use DB;
 
 class SecteurActiviteController extends Controller
 {
@@ -14,6 +18,9 @@ class SecteurActiviteController extends Controller
     public function index()
     {
         //
+        $secteur_activites = DB::table('secteur_activites')->get();
+
+        return view('Admin/secteur_activite.secteurDactiviteLister', compact('secteur_activites'));
     }
 
     /**

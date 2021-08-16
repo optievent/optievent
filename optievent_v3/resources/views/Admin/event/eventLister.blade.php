@@ -2,21 +2,21 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>OptiEvent | Administration</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('Admin/assets/images/favicon.ico')}}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
   <body>
@@ -221,20 +221,39 @@
                 <div class="col-12 grid-margin">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title"> Liste des secteurs d'activités de l'évènement {{Event_Name}}</h4>
+                      <h4 class="card-title"> Liste de vos évènements</h4>
                       <div class="table-responsive">
                         <table class="table">
                           <thead>
                             <tr>
-                              <th>Libellé </th>
-                              <th class="text-center"> Options</th>
+                              <th> Libellé </th>
+                              <th> Activer / Désactiver </th>
+                              <th class="text-center"> Phases</th>
+                              <th class="text-center"> Options </th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td> Cérémonie d'ouverture</td>
-                              <td class="text-center"> 
+                              <td> Sicot 2022</td>
+                              <td>
+                                  <!-- Rounded switch -->
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                   
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-primary">Inscriptions</button>
+                                <button type="button" class="btn btn-success">Suggestions</button>   
+                                <button type="button" class="btn btn-warning">Confirmations</button>
+                                <button type="button" class="btn btn-info">Planning</button>   
+                               </div>
+                                
+                              </td>
+                              <td> 
                                 <button type="button" class="btn btn-success"><i class="bi bi-pencil"></i></button>
+                                <button type="button" class="btn btn-dark"><i class="bi bi-stop-circle"></i></button>
                                 <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>  
                               </td>
                             </tr>

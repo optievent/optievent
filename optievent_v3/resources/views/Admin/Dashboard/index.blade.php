@@ -6,25 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>OptiEvent | Administration</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('Admin/assets/vendors/css/vendor.bundle.base.css')}}">">
+ 
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('Admin/assets/images/favicon.ico')}}" />
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="/assets/images/logo-optievent.png"></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/assets/images/logo-min.png"></a>
+          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo-optievent.png"></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-min.png"></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -113,18 +114,18 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="/">
                 <span class="menu-title">Tabeau de bord</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#evenements" aria-expanded="false" aria-controls="evenements">
+              <a class="nav-link" data-toggle="collapse" href="/events" aria-expanded="false" aria-controls="evenements">
                 <span class="menu-title">Évènements</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-calendar menu-icon"></i>
               </a>
-              <div class="collapse" id="evenements">
+              <div class="collapse" id="evenements\">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="/evenements.lister.html">  Lister</a></li>
                   <li class="nav-item"> <a class="nav-link" href="/evenements.ajouter.html">Ajouter</a></li>
@@ -132,7 +133,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#actives" aria-expanded="false" aria-controls="actives">
+              <a class="nav-link" data-toggle="collapse" href="/activites" aria-expanded="false" aria-controls="actives">
                 <span class="menu-title">Activités</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-ballot-recount menu-icon"></i>
@@ -145,7 +146,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#secteurs-activites" aria-expanded="false" aria-controls="secteurs-activites">
+              <a class="nav-link" data-toggle="collapse" href="/secteuractivites" aria-expanded="false" aria-controls="secteurs-activites">
                 <span class="menu-title">Secteurs d'activités</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-google-circles-group menu-icon"></i>
@@ -158,7 +159,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#profils" aria-expanded="false" aria-controls="profils">
+              <a class="nav-link" data-toggle="collapse" href="/profils" aria-expanded="false" aria-controls="profils">
                 <span class="menu-title">Profils</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-account-box menu-icon"></i>
@@ -171,7 +172,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#entreprises" aria-expanded="false" aria-controls="entreprises">
+              <a class="nav-link" data-toggle="collapse" href="/entreprises" aria-expanded="false" aria-controls="entreprises">
                 <span class="menu-title">Entreprises</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-home-account menu-icon"></i>
@@ -184,7 +185,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#participants" aria-expanded="false" aria-controls="participants">
+              <a class="nav-link" data-toggle="collapse" href="/participants" aria-expanded="false" aria-controls="participants">
                 <span class="menu-title">Participants</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-account menu-icon"></i>
@@ -197,7 +198,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#organisateurs" aria-expanded="false" aria-controls="organisateurs">
+              <a class="nav-link" data-toggle="collapse" href="/organisateurs" aria-expanded="false" aria-controls="organisateurs">
                 <span class="menu-title">Organisateurs</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-account-circle menu-icon"></i>
@@ -243,7 +244,7 @@
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                     <!--<img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" /> -->
                     <h4 class="font-weight-normal mb-3">Nombre de participants <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">15,0000</h2>
@@ -254,7 +255,7 @@
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-info card-img-holder text-white">
                   <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                     <!--<img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" /> -->
                     <h4 class="font-weight-normal mb-3">Nombre d'entreprises <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">6334</h2>
@@ -265,7 +266,7 @@
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
-                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <!--<img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" /> -->
                     <h4 class="font-weight-normal mb-3">Nombre de rendez-vous générés <i class="mdi mdi-diamond mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">200</h2>
