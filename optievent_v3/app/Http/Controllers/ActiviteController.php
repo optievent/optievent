@@ -11,7 +11,7 @@ use DB;
 class ActiviteController extends Controller
 {
 
-    use ZoomMeetingTrait;
+    use ZoomMeetingTrait;  
 
     const MEETING_TYPE_INSTANT = 1;
     const MEETING_TYPE_SCHEDULE = 2;
@@ -54,16 +54,24 @@ class ActiviteController extends Controller
     {
         //
 
-        $activite = new Activite;
-        $activite->libelle = $request->get('libelle');
-        $activite->date = $request->get('date');
-        $activite->heure_debut = $request->get('heure_debut');
-        $activite->heure_fin = $request->get('heure_fin');
-        $activite->save();
+        //$activite = new Activite;
+        //$activite->libelle = $request->get('libelle');
+        //$activite->date = $request->get('date');
+        //$activite->heure_debut = $request->get('heure_debut');
+        //$activite->heure_fin = $request->get('heure_fin');
+        //$activite->save();
+        $data = $request->all();
+        
 
-        $this->create($request->all());
+        $data['host_video']  = 1 ;
+        $data['participant_video']  = 1  ;
+       
 
-        return redirect('/activites');
+        $meet = $this->created($data);
+
+       // $this->create($request->all());
+       dd($meet);
+        //return back();
         //->route('meetings.index');
     }
 

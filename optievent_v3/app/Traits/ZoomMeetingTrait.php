@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use Log;
 
 /**
- * trait ZoomMeetingTrait
+ * trait ZoomMeetingTrait  
  */
 trait ZoomMeetingTrait
 {
@@ -54,7 +54,7 @@ trait ZoomMeetingTrait
         }
     }
 
-    public function create($data)
+    public function created($data)
     {
         $path = 'users/me/meetings';
         $url = $this->retrieveZoomUrl();
@@ -67,21 +67,26 @@ trait ZoomMeetingTrait
                 'start_time' => $this->toZoomTimeFormat($data['start_time']),
                 'duration'   => $data['duration'],
                 'agenda'     => (! empty($data['agenda'])) ? $data['agenda'] : null,
-                'timezone'     => 'Asia/Kolkata',
+                'timezone'     => 'Africa/Alger',
                 'settings'   => [
                     'host_video'        => ($data['host_video'] == "1") ? true : false,
                     'participant_video' => ($data['participant_video'] == "1") ? true : false,
-                    'waiting_room'      => true,
+                    'waiting_room'      => true
                 ],
             ]),
         ];
 
         $response =  $this->client->post($url.$path, $body);
 
-        return [
-            'success' => $response->getStatusCode() === 201,
-            'data'    => json_decode($response->getBody(), true),
-        ];
+       
+
+            return [
+                'success' => $response->getStatusCode() === 201,
+                'data'    => json_decode($response->getBody(), true),
+            ];
+
+    
+        
     }
     
     public function update($id, $data)

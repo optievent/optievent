@@ -127,7 +127,7 @@
               </a>
               <div class="collapse" id="evenements">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">  Lister</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Lister</a></li>
                   <li class="nav-item"> <a class="nav-link" href="#">Ajouter</a></li>
                 </ul>
               </div>
@@ -225,19 +225,28 @@
                     {{ csrf_field() }}
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Libellé de l'activité : (<span class="red">*</span>)</label>
-                        <input type="text" name="libelle" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label for="exampleInputName1">Topic : (<span class="red">*</span>)</label>
+                        <input type="text" name="topic" class="form-control" id="exampleInputName1" placeholder="Name">
                       </div>
                       <div class="form-group">
-                        <label for="exampleSelectGender">Date  (<span class="red">*</span>)</label>
+                        <label for="exampleSelectGender">start_time  (<span class="red">*</span>)</label>
                         <!--<select class="form-control" id="exampleSelectGender">
                           <option>En ligne</option>
                           <option>Hors ligne</option>
                         </select> -->
                         <div class="">
-                            <input type="date" name="date" class="form-control" placeholder="dd/mm/yyyy" />
+                            <input type="date" name="start_time" class="form-control" placeholder="dd/mm/yyyy" />
                             </div>
                       </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Duration  (<span class="red">*</span>)</label>
+  
+                        <div class="">
+                            <input type="number" name="duration" class="form-control" placeholder="dd/mm/yyyy" />
+                            </div>
+                      </div>
+
                       <div class="row">
                         <div class="form-group col-md-6">
                             <label class="col-form-label">Heure de début : (<span class="red">*</span>)</label>
